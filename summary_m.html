@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7项目储备汇总 - 手机版</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;color:#1a202c;background:#f7fafc;line-height:1.6;font-size:14px;padding:0 0 30px}
+.nav{background:#1a365d;color:#fff;padding:10px 14px;display:flex;gap:10px;align-items:center;position:sticky;top:0;z-index:100;font-size:13px;flex-wrap:wrap}
+.nav a{color:#fff;text-decoration:none;padding:3px 8px;border-radius:4px}
+.hero{background:linear-gradient(135deg,#1a365d,#2d3748);color:#fff;padding:24px 16px 20px;text-align:center}
+.hero h1{font-size:20px;margin-bottom:6px}
+.hero .subtitle{color:rgba(255,255,255,0.8);font-size:13px;margin-top:4px}
+.hero .meta{color:rgba(255,255,255,0.55);font-size:11px;margin-top:8px}
+.container{padding:14px}
+h2{font-size:16px;color:#1a365d;margin:20px 0 10px;padding-bottom:6px;border-bottom:2px solid #d69e2e;display:flex;align-items:center;gap:8px}
+h2::before{content:"";display:inline-block;width:4px;height:18px;background:#d69e2e;border-radius:2px}
+
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.stat-card{background:#fff;border-radius:6px;padding:10px 12px;box-shadow:0 1px 4px rgba(0,0,0,0.05);border-left:3px solid #d69e2e}
+.stat-card .num{font-size:18px;font-weight:700;color:#1a365d}
+.stat-card .label{color:#718096;font-size:11px;margin-top:2px}
+.stat-card.alt{border-left-color:#3182ce}.stat-card.alt .num{color:#3182ce}
+.stat-card.warn{border-left-color:#dd6b20}.stat-card.warn .num{color:#dd6b20}
+.stat-card.green{border-left-color:#38a169}.stat-card.green .num{color:#38a169}
+
+.industry-card{background:#fff;border-radius:6px;padding:10px 12px;margin-bottom:8px;box-shadow:0 1px 4px rgba(0,0,0,0.05);display:flex;justify-content:space-between;align-items:center}
+.industry-card .ic-name{font-size:13px;color:#1a365d;font-weight:600}
+.industry-card .ic-info{font-size:11px;color:#718096;text-align:right}
+
+.matrix-card{background:#fff;border-radius:6px;padding:12px 14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+.matrix-card .mc-title{font-size:14px;color:#1a365d;font-weight:600;margin-bottom:6px}
+.matrix-card .mc-row{display:flex;justify-content:space-between;font-size:11.5px;padding:3px 0;border-bottom:1px dashed #f0f4f8}
+.matrix-card .mc-row:last-child{border-bottom:none}
+.matrix-card .mc-row .ml{color:#718096;flex-shrink:0}
+.matrix-card .mc-row .mv{color:#1a365d;font-weight:600;text-align:right;margin-left:8px}
+
+.proj-card{background:#fff;border-radius:8px;padding:14px 16px;margin-bottom:12px;box-shadow:0 1px 4px rgba(0,0,0,0.05);border-left:4px solid #d69e2e}
+.proj-card .pc-title{font-size:15px;color:#1a365d;font-weight:700;margin-bottom:4px}
+.proj-card .pc-sub{font-size:11px;color:#718096;margin-bottom:10px}
+.proj-card .pc-section{margin-bottom:10px}
+.proj-card .pc-section h4{font-size:11px;color:#1a365d;text-transform:uppercase;margin-bottom:4px;letter-spacing:0.3px}
+.proj-card .pc-section p,.proj-card .pc-section ul{font-size:12px;color:#2d3748;line-height:1.6}
+.proj-card .pc-section ul{padding-left:18px}
+.proj-card .pc-section li{margin-bottom:3px}
+.proj-card .pc-link{color:#3182ce;text-decoration:none;font-size:12px;font-weight:500}
+
+.txn-card{background:#fff;border-radius:6px;padding:12px 14px;margin-bottom:10px;box-shadow:0 1px 4px rgba(0,0,0,0.05);border-top:3px solid #3182ce}
+.txn-card .tn{font-size:14px;color:#1a365d;font-weight:700}
+.txn-card .tt{display:inline-block;background:#edf2f7;color:#1a365d;font-size:10px;padding:2px 7px;border-radius:4px;margin:4px 0 6px}
+.txn-card .td{font-size:11.5px;color:#2d3748;line-height:1.65}
+.txn-card .td strong{color:#1a365d}
+
+.footer{text-align:center;color:#a0aec0;font-size:11px;margin-top:20px;padding:14px;border-top:1px solid #e2e8f0}
+.footer a{color:#3182ce;text-decoration:none;margin:0 6px}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="index_m.html">← 库</a>
+  <a href="#overview">总览</a>
+  <a href="#details">详情</a>
+  <a href="#txn">交易</a>
+</div>
+
+<div class="hero">
+  <h1>📊 7项目储备汇总</h1>
+  <div class="subtitle">商业尽调项目库</div>
+  <div class="meta">2026-06-29 · OpenClaw V3</div>
+</div>
+
+<div class="container">
+
+  <h2 id="overview">📈 项目总览</h2>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="num">7</div><div class="label">项目总数</div></div>
+    <div class="stat-card alt"><div class="num">5</div><div class="label">行业</div></div>
+    <div class="stat-card green"><div class="num">5</div><div class="label">Pre-IPO</div></div>
+    <div class="stat-card warn"><div class="num">1</div><div class="label">REITs</div></div>
+    <div class="stat-card alt"><div class="num">1</div><div class="label">科创辅导</div></div>
+    <div class="stat-card"><div class="num">3.2K亿</div><div class="label">合计营收</div></div>
+  </div>
+
+  <h2>🏭 行业分布</h2>
+  <div class="industry-card"><span class="ic-name">高端制造/LED</span><span class="ic-info">1个 · 晶能光电</span></div>
+  <div class="industry-card"><span class="ic-name">医疗大健康</span><span class="ic-info">2个 · 柯渡+信鸿</span></div>
+  <div class="industry-card"><span class="ic-name">新材料/能源</span><span class="ic-info">2个 · 中复+宏远</span></div>
+  <div class="industry-card"><span class="ic-name">IDC/REITs</span><span class="ic-info">1个 · 联通云</span></div>
+  <div class="industry-card"><span class="ic-name">换电运营</span><span class="ic-info">1个 · 迅巢</span></div>
+
+  <h2>🔍 主对比矩阵</h2>
+  <div class="matrix-card">
+    <div class="mc-title">晶能光电 · LED</div>
+    <div class="mc-row"><span class="ml">业务</span><span class="mv">6大事业部</span></div>
+    <div class="mc-row"><span class="ml">核心优势</span><span class="mv">硅衬底专利</span></div>
+    <div class="mc-row"><span class="ml">2024A</span><span class="mv">营收~10亿/净利~2亿</span></div>
+    <div class="mc-row"><span class="ml">净利率/ROE</span><span class="mv">20%+/21-33%</span></div>
+    <div class="mc-row"><span class="ml">可比</span><span class="mv">三安/华灿/乾照/兆驰</span></div>
+    <div class="mc-row"><span class="ml">交易方案</span><span class="mv">科创板+战投</span></div>
+  </div>
+  <div class="matrix-card">
+    <div class="mc-title">柯渡医学 · 医疗</div>
+    <div class="mc-row"><span class="ml">业务</span><span class="mv">设备全生命周期</span></div>
+    <div class="mc-row"><span class="ml">核心优势</span><span class="mv">联影/西门子代理</span></div>
+    <div class="mc-row"><span class="ml">2024A</span><span class="mv">待补</span></div>
+    <div class="mc-row"><span class="ml">客户数</span><span class="mv">3,000+医院</span></div>
+    <div class="mc-row"><span class="ml">可比</span><span class="mv">待补</span></div>
+    <div class="mc-row"><span class="ml">交易方案</span><span class="mv">Pre-IPO+主板</span></div>
+  </div>
+  <div class="matrix-card">
+    <div class="mc-title">中复碳芯 · 新材料</div>
+    <div class="mc-row"><span class="ml">业务</span><span class="mv">特高压+风电+光伏</span></div>
+    <div class="mc-row"><span class="ml">核心优势</span><span class="mv">中国建材赋能</span></div>
+    <div class="mc-row"><span class="ml">2024A</span><span class="mv">中型(待补)</span></div>
+    <div class="mc-row"><span class="ml">可比</span><span class="mv">中复神鹰/光威/中材</span></div>
+    <div class="mc-row"><span class="ml">交易方案</span><span class="mv">Pre-IPO+A轮</span></div>
+  </div>
+  <div class="matrix-card">
+    <div class="mc-title">宏远创信 · 能源</div>
+    <div class="mc-row"><span class="ml">业务</span><span class="mv">综合智慧能源</span></div>
+    <div class="mc-row"><span class="ml">核心优势</span><span class="mv">国家能源参股</span></div>
+    <div class="mc-row"><span class="ml">2024A</span><span class="mv">待补</span></div>
+    <div class="mc-row"><span class="ml">可比</span><span class="mv">南网/华润/协鑫</span></div>
+    <div class="mc-row"><span class="ml">交易方案</span><span class="mv">Pre-IPO+央企战投</span></div>
+  </div>
+  <div class="matrix-card">
+    <div class="mc-title">联通云IDC · REITs</div>
+    <div class="mc-row"><span class="ml">业务</span><span class="mv">IDC+智算+REITs</span></div>
+    <div class="mc-row"><span class="ml">核心优势</span><span class="mv">联通央企背景</span></div>
+    <div class="mc-row"><span class="ml">2024 IDC市场</span><span class="mv">6,411.6亿</span></div>
+    <div class="mc-row"><span class="ml">可比REITs</span><span class="mv">180901/508060</span></div>
+    <div class="mc-row"><span class="ml">交易方案</span><span class="mv">公募REITs+扩募</span></div>
+  </div>
+  <div class="matrix-card">
+    <div class="mc-title">信鸿医疗 · IVD</div>
+    <div class="mc-row"><span class="ml">业务</span><span class="mv">商业+工业+孵化+物流</span></div>
+    <div class="mc-row"><span class="ml">核心优势</span><span class="mv">5.4%净利领先</span></div>
+    <div class="mc-row"><span class="ml">2024A</span><span class="mv">营收6.28亿/净利3398万</span></div>
+    <div class="mc-row"><span class="ml">ROE</span><span class="mv">9.47%(行业最优秀)</span></div>
+    <div class="mc-row"><span class="ml">可比</span><span class="mv">迪安/金域/塞力/润达</span></div>
+    <div class="mc-row"><span class="ml">交易方案</span><span class="mv">北交所/创业板IPO</span></div>
+  </div>
+  <div class="matrix-card">
+    <div class="mc-title">迅巢科技 · 换电</div>
+    <div class="mc-row"><span class="ml">业务</span><span class="mv">物流三轮90%+市占</span></div>
+    <div class="mc-row"><span class="ml">核心优势</span><span class="mv">全链自营唯一</span></div>
+    <div class="mc-row"><span class="ml">2024→2028E</span><span class="mv">0.92→7.6亿(CAGR 70%)</span></div>
+    <div class="mc-row"><span class="ml">留存/复购</span><span class="mv">95%/88%</span></div>
+    <div class="mc-row"><span class="ml">可比</span><span class="mv">哈啰/宇谷/铁塔</span></div>
+    <div class="mc-row"><span class="ml">交易方案</span><span class="mv">Pre-IPO+海外</span></div>
+  </div>
+
+  <h2 id="details">📋 项目详情</h2>
+
+  <div class="proj-card">
+    <div class="pc-title">1. 晶能光电（江西）</div>
+    <div class="pc-sub">硅衬底LED芯片 · 科创板辅导中</div>
+    <div class="pc-section">
+      <h4>主营业务板块</h4>
+      <ul><li>6大事业部:LED芯片/模组/汽车LED/Mini LED/Micro LED/照明</li><li>IDM一体化:外延→芯片→封装→应用</li><li>2022-2026E收入CAGR 23%,净利润CAGR 31%</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>核心优势</h4>
+      <ul><li>硅衬底GaN技术全球专利壁垒</li><li>高端客户:华为/OPPO/Vivo/小米/三星/比亚迪</li><li>净利率断层式领先(20%+ vs 同行2%)</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>财务指标</h4>
+      <div class="matrix-card" style="margin:4px 0">
+        <div class="mc-row"><span class="ml">2024A 营收</span><span class="mv">~10亿元</span></div>
+        <div class="mc-row"><span class="ml">2024A 净利润</span><span class="mv">~2亿元</span></div>
+        <div class="mc-row"><span class="ml">净利率/ROE</span><span class="mv">20%+/21-33%</span></div>
+        <div class="mc-row"><span class="ml">资产负债率</span><span class="mv">~19%</span></div>
+      </div>
+    </div>
+    <div class="pc-section">
+      <h4>可比公司</h4>
+      <p>三安光电(600703)、华灿光电(300323)、乾照光电(300102)、兆驰股份(002429)</p>
+    </div>
+    <a class="pc-link" href="https://jinzhanxiang.github.io/jngd-report/report_main_m.html">查看完整报告 →</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="pc-title">2. 上海柯渡医学</div>
+    <div class="pc-sub">医疗设备全生命周期服务 · Pre-IPO</div>
+    <div class="pc-section">
+      <h4>主营业务板块</h4>
+      <ul><li>医疗设备销售(联影/西门子核心代理)</li><li>医疗设备维保(7×24h)</li><li>技术培训/医院资产管理/产业孵化</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>核心优势</h4>
+      <ul><li>联影/西门子核心代理权</li><li>7×24小时本地化服务网络</li><li>3,000+医院长期合作</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>财务指标</h4>
+      <div class="matrix-card" style="margin:4px 0">
+        <div class="mc-row"><span class="ml">2024A 营收</span><span class="mv">待补</span></div>
+        <div class="mc-row"><span class="ml">2024A 净利</span><span class="mv">待补</span></div>
+        <div class="mc-row"><span class="ml">客户数</span><span class="mv">3,000+</span></div>
+      </div>
+    </div>
+    <div class="pc-section">
+      <h4>可比公司</h4>
+      <p>待补充(医疗设备服务赛道上市可比少)</p>
+    </div>
+    <a class="pc-link" href="https://jinzhanxiang.github.io/kedu-report/report_main.html">查看完整报告 →</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="pc-title">3. 中复碳芯</div>
+    <div class="pc-sub">碳纤维芯电缆 · 中国建材集团赋能 · Pre-IPO</div>
+    <div class="pc-section">
+      <h4>主营业务板块</h4>
+      <ul><li>特高压输电电缆(核心)</li><li>风电叶片用碳纤维</li><li>光伏边框/支架</li><li>航空航天高端应用</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>核心优势</h4>
+      <ul><li>中国建材集团(央企)赋能</li><li>"特高压+风电+光伏"三引擎</li><li>工艺技术领先/产业链一体化</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>财务指标</h4>
+      <div class="matrix-card" style="margin:4px 0">
+        <div class="mc-row"><span class="ml">业务规模</span><span class="mv">中型(待补)</span></div>
+        <div class="mc-row"><span class="ml">增长性</span><span class="mv">受益特高压+新能源</span></div>
+        <div class="mc-row"><span class="ml">下游绑定</span><span class="mv">国家电网/五大发电</span></div>
+      </div>
+    </div>
+    <div class="pc-section">
+      <h4>可比公司</h4>
+      <p>中复神鹰(688295)、光威复材(300699)、中材科技(002080)、吉林化纤(000420)</p>
+    </div>
+    <a class="pc-link" href="https://jinzhanxiang.github.io/zhongfu-report/report_main_m.html">查看完整报告 →</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="pc-title">4. 宏远创信</div>
+    <div class="pc-sub">综合智慧能源服务 · 国家能源集团参股 · Pre-IPO</div>
+    <div class="pc-section">
+      <h4>主营业务板块</h4>
+      <ul><li>综合能源托管/能源管理</li><li>节能改造(EMC/EPC)</li><li>分布式能源(光伏+储能+热电联产)</li><li>能源数字化平台</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>核心优势</h4>
+      <ul><li>国家能源集团(央企)背书</li><li>多场景能源解决方案能力</li><li>能源数字化平台自研</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>财务指标</h4>
+      <div class="matrix-card" style="margin:4px 0">
+        <div class="mc-row"><span class="ml">2024A 营收</span><span class="mv">待补</span></div>
+        <div class="mc-row"><span class="ml">2024A 毛利率</span><span class="mv">待补</span></div>
+        <div class="mc-row"><span class="ml">项目周期</span><span class="mv">EMC长合同</span></div>
+      </div>
+    </div>
+    <div class="pc-section">
+      <h4>可比公司</h4>
+      <p>南网能源(003035)、华润能源(HK)、协鑫能科(002015)、双良节能(600481)</p>
+    </div>
+    <a class="pc-link" href="https://jinzhanxiang.github.io/hongyuan-report/report_main_m.html">查看完整报告 →</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="pc-title">5. 联通云数据中心IDC</div>
+    <div class="pc-sub">IDC基础设施REITs · 公募REITs申报中</div>
+    <div class="pc-section">
+      <h4>主营业务板块</h4>
+      <ul><li>IDC机柜租赁(通用机柜)</li><li>智算中心(AIDC)/超算</li><li>云服务(IaaS/PaaS/SaaS)</li><li>REITs结构化金融退出</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>核心优势</h4>
+      <ul><li>中国联通集团央企背景</li><li>IDC+智算双引擎</li><li>REITs结构化退出</li><li>政府/金融/互联网头部客户</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>财务指标</h4>
+      <div class="matrix-card" style="margin:4px 0">
+        <div class="mc-row"><span class="ml">IDC市场(2024)</span><span class="mv">6,411.6亿</span></div>
+        <div class="mc-row"><span class="ml">AIDC市场(2026E)</span><span class="mv">1,778亿</span></div>
+        <div class="mc-row"><span class="ml">Cap Rate</span><span class="mv">5.5-6.5%</span></div>
+      </div>
+    </div>
+    <div class="pc-section">
+      <h4>可比公司</h4>
+      <p>南方润泽科技数据中心REIT(180901.SZ)、南方万国数据中心REIT(508060.SH)、光环新网(300383)、数据港(603881)、宝信软件(600845)</p>
+    </div>
+    <a class="pc-link" href="https://jinzhanxiang.github.io/unicom-idc-report/report_main_m.html">查看完整报告 →</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="pc-title">6. 信鸿医疗</div>
+    <div class="pc-sub">IVD体外诊断综合服务平台 · Pre-IPO</div>
+    <div class="pc-section">
+      <h4>主营业务板块</h4>
+      <ul><li>商业综合服务(IVD供应链+医学实验室打包)</li><li>工业(中成佳益自产IVD)</li><li>产业孵化(184家入孵)</li><li>三方物流(天津首家牌照)</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>核心优势</h4>
+      <ul><li>5.4%净利率断层式领先(4家可比全部亏损)</li><li>9.47% ROE行业最优秀</li><li>津冀315+医院深度网络</li><li>25年IVD代理积淀</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>财务指标</h4>
+      <div class="matrix-card" style="margin:4px 0">
+        <div class="mc-row"><span class="ml">2024A 营收</span><span class="mv">6.28亿</span></div>
+        <div class="mc-row"><span class="ml">2024A 净利</span><span class="mv">3,398万</span></div>
+        <div class="mc-row"><span class="ml">净利率/ROE</span><span class="mv">5.41%/9.47%</span></div>
+        <div class="mc-row"><span class="ml">2025 营收</span><span class="mv">5.29亿(-15.7%)</span></div>
+        <div class="mc-row"><span class="ml">资产负债率</span><span class="mv">54.6%(偏高)</span></div>
+      </div>
+    </div>
+    <div class="pc-section">
+      <h4>可比公司</h4>
+      <p>迪安诊断(300244)、金域医学(603882)、塞力医疗(603716)、润达医疗(603108)</p>
+    </div>
+    <a class="pc-link" href="https://jinzhanxiang.github.io/xinhong-report/report_main_m.html">查看完整报告 →</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="pc-title">7. 迅巢换电（XCHS）</div>
+    <div class="pc-sub">两轮/三轮电动车换电 · Pre-IPO</div>
+    <div class="pc-section">
+      <h4>主营业务板块</h4>
+      <ul><li>物流快递三轮车换电(90%市占)</li><li>即时配送(美团/饿了么/达达)</li><li>百姓出行/市政环卫</li><li>产业园区充/换电</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>核心优势</h4>
+      <ul><li>行业唯一全链自营</li><li>物流快递90%+市占率</li><li>95%留存+88%复购</li><li>三步走:国内→海外复制</li></ul>
+    </div>
+    <div class="pc-section">
+      <h4>财务指标</h4>
+      <div class="matrix-card" style="margin:4px 0">
+        <div class="mc-row"><span class="ml">2024A 营收</span><span class="mv">0.92亿</span></div>
+        <div class="mc-row"><span class="ml">2025A 营收</span><span class="mv">3.5亿(+280%)</span></div>
+        <div class="mc-row"><span class="ml">2028E 营收</span><span class="mv">7.6亿</span></div>
+        <div class="mc-row"><span class="ml">净利率(2025)</span><span class="mv">12.90%</span></div>
+        <div class="mc-row"><span class="ml">CAGR(2024-28E)</span><span class="mv">70%+</span></div>
+      </div>
+    </div>
+    <div class="pc-section">
+      <h4>可比公司</h4>
+      <p>哈啰换电、宇谷科技(833592这锂换电)、铁塔能源、易马达e换电、智租换电</p>
+    </div>
+    <a class="pc-link" href="https://jinzhanxiang.github.io/xunchao-report/report_main_m.html">查看完整报告 →</a>
+  </div>
+
+  <h2 id="txn">💼 交易方案</h2>
+  <div class="txn-card">
+    <div class="tn">1. 晶能光电</div>
+    <div class="tt">科创板IPO+战略配售</div>
+    <div class="td"><strong>方案</strong>:科创板+战投(上汽领投27.5亿)<br><strong>节点</strong>:2024.11申报→2025-26上市<br><strong>估值</strong>:上市80-100亿(中性)<br><strong>风险</strong>:MBO/华为出货/IPO审核</div>
+  </div>
+  <div class="txn-card">
+    <div class="tn">2. 柯渡医学</div>
+    <div class="tt">Pre-IPO+主板/创业板</div>
+    <div class="td"><strong>方案</strong>:Pre-IPO→1-2年申报<br><strong>估值</strong>:参考医疗设备服务一级估值<br><strong>风险</strong>:数据有限/客户集中度</div>
+  </div>
+  <div class="txn-card">
+    <div class="tn">3. 中复碳芯</div>
+    <div class="tt">Pre-IPO+A轮产业方</div>
+    <div class="td"><strong>方案</strong>:A轮产业方领投+Pre-IPO→科创板<br><strong>估值</strong>:参考中复神鹰PE+PS<br><strong>风险</strong>:技术替代/原材料价格</div>
+  </div>
+  <div class="txn-card">
+    <div class="tn">4. 宏远创信</div>
+    <div class="tt">Pre-IPO+央企战投</div>
+    <div class="td"><strong>方案</strong>:Pre-IPO+国家能源战投→北交所/创业板<br><strong>估值</strong>:参考南网/协鑫能科<br><strong>风险</strong>:数据缺口/竞争激烈</div>
+  </div>
+  <div class="txn-card">
+    <div class="tn">5. 联通云IDC</div>
+    <div class="tt">公募REITs+扩募</div>
+    <div class="td"><strong>方案</strong>:REITs发行(类比180901/508060)+扩募<br><strong>估值</strong>:NAV/REITs+P/NAV+DCF<br><strong>风险</strong>:上架率/电价/REITs审批</div>
+  </div>
+  <div class="txn-card">
+    <div class="tn">6. 信鸿医疗</div>
+    <div class="tt">北交所/创业板IPO</div>
+    <div class="td"><strong>方案</strong>:Pre-IPO(7亿估值)→IPO<br><strong>估值</strong>:PS 1.1x×6.28亿=7亿<br><strong>风险</strong>:集采/应收52.5%/区域集中</div>
+  </div>
+  <div class="txn-card">
+    <div class="tn">7. 迅巢科技</div>
+    <div class="tt">Pre-IPO+海外融资</div>
+    <div class="td"><strong>方案</strong>:Pre-IPO(30亿)+海外拆分→科创板/北交所<br><strong>估值</strong>:PS 8.6x×3.5亿=30亿<br><strong>风险</strong>:财务待审/价格战/大客户</div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <a href="index.html">桌面版</a>·<a href="index_m.html">项目库</a><br>
+  商业尽调项目库 · GitHub Pages · OpenClaw V3
+</div>
+</body>
+</html>
